@@ -13,13 +13,13 @@ module.exports.outTextfromCezar = function(value){
     return "Good morning" + value;
 } */
 
-module.exports.encrypt = function(value){
+module.exports.encrypt = function(value,shift){
     var result = "";
     for (var i = 0; i <= value.length; i++) {
         var symbol = value[i];
         namber = value.charCodeAt(i) 
         
-        result += String.fromCharCode(namber + 1 )
+        result += String.fromCharCode(namber + shift )
       }
     return   result;
 }

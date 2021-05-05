@@ -14,12 +14,13 @@ let arg8 = process.argv[9];
 let fs = require('fs')
 const cesar = require("./Encrypt");
 const answer = require("./Decrypt")
+let shift = 1 ;  // уровень сдвига кодировки 
 
 let read = fs.readFileSync('input.txt', 'utf8') // читаем текст для шифрофки из файла синхронно.
 
 
-let encrupt_message = cesar.encrypt(read)   // отправляем текст на кодировку в модуль кодировки 
-let decrypt_message = answer.Dencrypt(read)   // отправляем текст на декодировку в модуль кодировки
+let encrupt_message = cesar.encrypt(read,shift)   // отправляем текст на кодировку в модуль кодировки 
+let decrypt_message = answer.Dencrypt(read,shift)   // отправляем текст на декодировку в модуль кодировки
 
 console.log(encrupt_message )
 console.log(decrypt_message )

@@ -1,37 +1,99 @@
 
 
-let nodePath = process.argv[0];
-let appPath = process.argv[1];
-let arg1 = process.argv[2];
-let arg2 = process.argv[3];
-let arg3 = process.argv[4];
-let arg4 = process.argv[5];
-let arg5 = process.argv[6];
-let arg6 = process.argv[7];
-let arg7 = process.argv[8];
-let arg8 = process.argv[9];
+
+let encode = "encode";
+let decode = "decode"
+let action = ""
+let first_file = './input.txt';
+let second_file = "./output.txt";
+let input_file = "";
+let outnput_file = "";
+/* let file = "" ; */
+
+var argv = require('minimist')(process.argv.slice(2));
+/* console.log(argv.a); */
+console.log(   "-S  равно  " + argv.s);
+console.log(  " --shift равно " + argv.shift);
+
 
 let fs = require('fs')
 const cesar = require("./Encrypt");
 const answer = require("./Decrypt")
-let shift = 1 ;  // уровень сдвига кодировки 
-
-let read = fs.readFileSync('input.txt', 'utf8') // читаем текст для шифрофки из файла синхронно.
+let shift = argv.s ;  // уровень сдвига кодировки 
 
 
-let encrupt_message = cesar.encrypt(read,shift)   // отправляем текст на кодировку в модуль кодировки 
-let decrypt_message = answer.Dencrypt(read,shift)   // отправляем текст на декодировку в модуль кодировки
+if (argv.s != undefined){
+    shift = argv.s
+    console.log("сработал флаг -s" + " " + "шаг кода " + shift);
+}   
+if (argv.a != undefined){
+    action = argv.a
+    console.log("дейсвие " + action );
+}
+if (argv.i != undefined){
+    if(argv.i == first_file){
+    input_file = first_file    
+    } else {
+        console.log("Путь входного файле не верен")
+        action = 0 
+    }
+       
+}
 
-console.log(encrupt_message )
-console.log(decrypt_message )
+if (argv.o != undefined){
+    if(argv.o == second_file){
+    outnput_file = second_file    
+    } else {
+        console.log("Путь выходного файле не верен")
+        action = 0 
+    }
+       
+}
+/* if (argv.shift != undefined){
+    shift = argv.shift
+    console.log("сработал флаг -shift");
+}  */
 
-let message = encrupt_message
+
+
+if (action == encode){
+    console.log("//////")
+    let read = fs.readFileSync(input_file, 'utf8')
+    let encrupt_message = cesar.encrypt(read,shift);
+    let writeableStream = fs.createWriteStream(second_file);
+    let message = encrupt_message
+    writeableStream.write(  message);
+    writeableStream.end("\n");
+    console.log(message)
+}
+
+if (action == decode){
+    console.log("-----")
+    let read = fs.readFileSync(input_file, 'utf8')
+    let decrypt_message = answer.Dencrypt(read,shift) 
+    let writeableStream = fs.createWriteStream(second_file);
+    let message = decrypt_message
+    writeableStream.write( message);
+    writeableStream.end("\n");
+    console.log(message)
+}
+
+
+
+/* /* /* /* let read = fs.readFileSync('input.txt' , 'utf8' */ // читаем текст для шифрофки из файла синхронно. */ */ */
+
+
+   // отправляем текст на кодировку в модуль кодировки 
+/* let decrypt_message = answer.Dencrypt(read,shift)  */  // отправляем текст на декодировку в модуль кодировки
+
+/* console.log(encrupt_message ) */
+/* console.log(decrypt_message ) */
+
+
 /* let message = decrypt_message */
 
 
-let writeableStream = fs.createWriteStream("code.txt");
-writeableStream.write(  message);
-writeableStream.end("\n");
+
 
 /* let messages = decrypt_message
 fs.writeFileSync('code.txt',  messages ) */

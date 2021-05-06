@@ -1,0 +1,23 @@
+{
+  "name": "caesar-cipher-cli-tool",
+  "version": "1.0.0",
+  "description": "Caesar_cicher",
+  "main": "App.js",
+  "dependencies": {
+    "minimist": "^1.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "start "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webjsworker/Caesar-cipher-CLI-tool.git"
+  },
+  "author": "Alexsei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webjsworker/Caesar-cipher-CLI-tool/issues"
+  },
+  "homepage": "https://github.com/webjsworker/Caesar-cipher-CLI-tool#readme"
+}

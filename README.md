@@ -1,9 +1,9 @@
 # Caesar-cipher-CLI-tool
 ## Description
 options 
-- **Drag**
-- **--shift  -s **  a shift (positive)
---action -a  an action encode/decode 
+
+- --shift  -s   a shift (positive)
+- --action -a  an action encode/decode 
 --input  -i  ./input.txt  an input file
 --output -o  ./output.txt  an output file
 

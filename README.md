@@ -8,6 +8,7 @@ options
 - --output -o  ./output.txt  an output file
 
 ## For example 
+All parameters must be passed to execute the application.
 ```
 node app.js  -s 1 -a encode -i ./input.txt  -o output.txt 
 ```

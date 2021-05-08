@@ -4,8 +4,8 @@ options
 
 - --shift  -s   a shift (positive)
 - --action -a  an action encode/decode 
---input  -i  ./input.txt  an input file
---output -o  ./output.txt  an output file
+- --input  -i  ./input.txt  an input file
+- --output -o  ./output.txt  an output file
 
 ## For example 
 ```

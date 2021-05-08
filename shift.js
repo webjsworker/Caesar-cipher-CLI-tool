@@ -1,6 +1,3 @@
-
-/* let results = 0 */
-
 const minimist = require('minimist')
 
 module.exports.pars_shift = function () {
@@ -16,21 +13,9 @@ module.exports.pars_shift = function () {
       })
       if (Number.isInteger(arg_s.s) ){
         console.log("проверка шифт успено ")
-        }
-    else {console.log("шифт не число")}
+        } else {console.log("шифт не число или отрицательное число")}
+    
   return arg_s.s
 }
 
 
-
-
-
-/* 
-module.exports.shift = function(values){
-    if (Number.isInteger(values) ){
-        console.log("проверка шифт успено ")
-    results = values ;
-    }
-    else {console.log("шифт не число")}
-    return   results;
-} */

@@ -22,6 +22,7 @@ const Module_write = require("./Write");
 /* const minimist = require('minimist') */
 
 shift = Module_shift.pars_shift();
+
 action = Module_action.pars_action();
 input_file = Module_input.pars_input();
 output_file = Module_output.pars_output();

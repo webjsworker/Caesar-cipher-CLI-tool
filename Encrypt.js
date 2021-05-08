@@ -2,6 +2,7 @@
 
 module.exports.encrypt = function (value, shift) {
     var result = "";
+      
     for (var i = 0; i <= value.length; i++) {
        
         namber = value.charCodeAt(i)

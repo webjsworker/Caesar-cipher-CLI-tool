@@ -1,10 +1,18 @@
 # Caesar-cipher-CLI-tool
-команды 
---shift  -s  число сдвига шифра (для теста вводить 1 )
---action -a  decode/encode  
---input  -i  ./input.txt  путь до входного файла
---output -o  ./output.txt  путь до выходного файла
+## Description
+options 
+--shift  -s  a shift (positive)
+--action -a  an action encode/decode 
+--input  -i  ./input.txt  an input file
+--output -o  ./output.txt  an output file
 
-пример запроса 
+For example 
+node app.js  -s 1 -a encode -i ./input.txt  -o output.txt 
+or
+node app.js  --shift 1 --action encode --input ./input.txt  --output ./output.txt 
+node app.js  -s 1 -a encode --input ./input.txt  --output ./output.txt 
 
-node -s 1 -a encode -i ./input.txt  -o output.txt 
+
+```
+npm install
+```

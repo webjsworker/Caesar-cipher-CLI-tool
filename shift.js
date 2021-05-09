@@ -1,5 +1,8 @@
 const minimist = require('minimist')
 
+let s = "-s";
+let sh = "--shift"
+
 module.exports.pars_shift = function () {
     const arg_s = minimist(process.argv.slice(2), {
         string: ['size'],
@@ -11,11 +14,37 @@ module.exports.pars_shift = function () {
           return false
         } */
       })
+      let val = 0
       if (Number.isInteger(arg_s.s) ){
-        console.log("проверка шифт успено ")
-        } else {console.log("шифт не число или отрицательное число")}
+        console.log("Check --shift is right")
+        val = arg_s.s
+        } else {
+          /* console.log("шифт не число или отрицательное число")
+          val = 0 */
+
+for (var i = 0; i <= process.argv.length; i++){
+  
+  if(process.argv[i] == s ||process.argv[i]== sh){
+    let minus_shift = process.argv[i+1]
+    console.log("minus shift = " + minus_shift)
+    let namber = Number( minus_shift)
+    let check = Number.isInteger(namber) 
+    /* console.log( namber) */
+    if(check) {val = process.argv[i+1]} else {
+      console.log("--shift isn't namber")
+          val = 0
+    }
     
-  return arg_s.s
+    /* console.log(val) */
+  }
+}
+
+
+
+
+        }
+    
+  return val
 }
 
 

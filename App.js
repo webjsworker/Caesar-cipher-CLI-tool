@@ -28,54 +28,54 @@ action = Module_action.pars_action();
 input_file = Module_input.pars_input();
 output_file = Module_output.pars_output();
 
+/* console.log("shift ===" + shift) */
+
 // switch case with tyoe of action
 
 
-if (action == encode && input_file ==first_file  && output_file ==  second_file ){
+if (shift != 0 && action == encode && input_file ==first_file  && output_file ==  second_file ){
     let read = Module_read.read(input_file);
     let encrupt_message = cesar.encrypt(read,shift);
     let write = Module_write.write(output_file,encrupt_message);
     console.log(encrupt_message)
 } 
- if(action == encode && input_file !=first_file  && output_file ==  second_file) {
+ if(shift != 0 && action == encode && input_file !=first_file  && output_file ==  second_file) {
     let text = Module_prompt.prompt()
     let encrupt_message = cesar.encrypt( text,shift);
     let write = Module_write.write(output_file,encrupt_message);
    }
-   if(action == encode && input_file ==first_file  && output_file !=  second_file) {
+   if(shift != 0 && action == encode && input_file ==first_file  && output_file !=  second_file) {
        let read = Module_read.read(input_file);
     let encrupt_message = cesar.encrypt( read,shift);
     console.log("result encrypt - " + encrupt_message);
    }
-   if(action == encode && input_file !=first_file  && output_file !=  second_file) {
+   if(shift != 0 && action == encode && input_file !=first_file  && output_file !=  second_file) {
     let text = Module_prompt.prompt()
  let encrupt_message = cesar.encrypt(text,shift);
  console.log("result encrypt - " + encrupt_message);
 }
 
 
-
-
  
-if (action == decode && input_file ==first_file  && output_file ==  second_file){
+if (shift != 0 && action == decode && input_file ==first_file  && output_file ==  second_file){
     let read = Module_read.read(input_file);
     let decrypt_message = answer.Dencrypt(read,shift) 
     let write = Module_write.write(output_file,decrypt_message);
     console.log(decrypt_message)
 }
-if(action == decode && input_file !=first_file  && output_file ==  second_file) {
+if(shift != 0 && action == decode && input_file !=first_file  && output_file ==  second_file) {
     let text = Module_prompt.prompt()
     let decrypt_message = answer.Dencrypt( text,shift);
     let write = Module_write.write(output_file,decrypt_message );
     
  }
- if(action == decode && input_file ==first_file  && output_file !=  second_file) {
+ if(shift != 0 && action == decode && input_file ==first_file  && output_file !=  second_file) {
     let read = Module_read.read(input_file);
     let decrypt_message = answer.Dencrypt(  read,shift);
     console.log("result decrypt - " + decrypt_message);
     
  }
- if(action == decode && input_file !=first_file  && output_file !=  second_file) {
+ if(shift != 0 && action == decode && input_file !=first_file  && output_file !=  second_file) {
     let text = Module_prompt.prompt()
     let decrypt_message = answer.Dencrypt( text,shift);
     console.log("result decrypt - " + decrypt_message);

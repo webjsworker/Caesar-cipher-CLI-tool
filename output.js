@@ -10,11 +10,11 @@ module.exports.pars_output = function () {
         default: {'output': false},
          })
          if (arg_o.o == second_file){
-            console.log("путь до выходного файла указан верно")
+            /* console.log("путь до выходного файла указан верно") */
             result_output_file = second_file 
       
         } else {
-            console.log("путь выходного файла не верен")
+            console.log("The path to output file isn't right")
          
       }
   return result_output_file

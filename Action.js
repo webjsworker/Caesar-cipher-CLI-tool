@@ -19,8 +19,8 @@ module.exports.pars_action = function () {
         }  
      if (arg_a.a == encode || arg_a.a == decode ){
     action_result = arg_a.a ;
-    console.log("проверка action успешно")
-     } else {console.log("не верный тип action")}
+    /* console.log("проверка action успешно") */
+     } else {console.log("type of --action is uncorrectly")}
 
 
   return action_result

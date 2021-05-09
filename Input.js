@@ -10,11 +10,11 @@ module.exports.pars_input = function () {
         default: {'input': false},
          })
          if (arg_i.i == first_file){
-            console.log("путь до входного файла указан верно")
+            /* console.log("путь до входного файла указан верно") */
             result_input_file = first_file 
       
         } else {
-            console.log("путь входного файла не верен")
+            console.log("The path to input file isn't right ")
            /*  action = 0  */
           }
   return result_input_file

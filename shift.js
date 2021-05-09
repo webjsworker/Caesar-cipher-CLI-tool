@@ -26,7 +26,7 @@ for (var i = 0; i <= process.argv.length; i++){
   
   if(process.argv[i] == s ||process.argv[i]== sh){
     let minus_shift = process.argv[i+1]
-    console.log("minus shift = " + minus_shift)
+/*     console.log("minus shift = " + minus_shift) */
     let namber = Number( minus_shift)
     let check = Number.isInteger(namber) 
     /* console.log( namber) */

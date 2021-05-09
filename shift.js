@@ -16,7 +16,7 @@ module.exports.pars_shift = function () {
       })
       let val = 0
       if (Number.isInteger(arg_s.s) ){
-        console.log("Check --shift is right")
+        /* console.log("Check --shift is right") */
         val = arg_s.s
         } else {
           /* console.log("шифт не число или отрицательное число")

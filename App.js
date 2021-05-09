@@ -37,7 +37,7 @@ if (shift != 0 && action == encode && input_file ==first_file  && output_file ==
     let read = Module_read.read(input_file);
     let encrupt_message = cesar.encrypt(read,shift);
     let write = Module_write.write(output_file,encrupt_message);
-    console.log(encrupt_message)
+    /* console.log(encrupt_message) */
 } 
  if(shift != 0 && action == encode && input_file !=first_file  && output_file ==  second_file) {
     let text = Module_prompt.prompt()
@@ -61,7 +61,7 @@ if (shift != 0 && action == decode && input_file ==first_file  && output_file ==
     let read = Module_read.read(input_file);
     let decrypt_message = answer.Dencrypt(read,shift) 
     let write = Module_write.write(output_file,decrypt_message);
-    console.log(decrypt_message)
+  /*   console.log(decrypt_message) */
 }
 if(shift != 0 && action == decode && input_file !=first_file  && output_file ==  second_file) {
     let text = Module_prompt.prompt()

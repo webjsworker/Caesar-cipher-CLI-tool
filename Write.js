@@ -6,5 +6,6 @@ module.exports.write = function ( path_write, text ) {
     writeableStream.write(  message);
     writeableStream.end("\n");
     
+    console.log("writed")
   return 
 }

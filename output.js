@@ -14,7 +14,7 @@ module.exports.pars_output = function () {
             result_output_file = second_file 
       
         } else {
-            console.log("путь входного файла не верен")
+            console.log("путь выходного файла не верен")
          
       }
   return result_output_file

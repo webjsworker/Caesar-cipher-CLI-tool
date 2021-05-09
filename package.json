@@ -4,7 +4,8 @@
   "description": "Caesar_cicher",
   "main": "App.js",
   "dependencies": {
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.5",
+    "prompt-sync": "^4.2.0"
   },
   "devDependencies": {},
   "scripts": {

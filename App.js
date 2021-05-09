@@ -17,6 +17,7 @@ const Module_input = require("./Input");
 const Module_output = require("./Output");
 const Module_read = require("./Read");
 const Module_write = require("./Write");
+const Module_prompt = require("./prompt");
 
 
 /* const minimist = require('minimist') */
@@ -35,16 +36,50 @@ if (action == encode && input_file ==first_file  && output_file ==  second_file 
     let encrupt_message = cesar.encrypt(read,shift);
     let write = Module_write.write(output_file,encrupt_message);
     console.log(encrupt_message)
+} 
+ if(action == encode && input_file !=first_file  && output_file ==  second_file) {
+    let text = Module_prompt.prompt()
+    let encrupt_message = cesar.encrypt( text,shift);
+    let write = Module_write.write(output_file,encrupt_message);
+   }
+   if(action == encode && input_file ==first_file  && output_file !=  second_file) {
+       let read = Module_read.read(input_file);
+    let encrupt_message = cesar.encrypt( read,shift);
+    console.log("result encrypt - " + encrupt_message);
+   }
+   if(action == encode && input_file !=first_file  && output_file !=  second_file) {
+    let text = Module_prompt.prompt()
+ let encrupt_message = cesar.encrypt(text,shift);
+ console.log("result encrypt - " + encrupt_message);
 }
 
+
+
+
+ 
 if (action == decode && input_file ==first_file  && output_file ==  second_file){
     let read = Module_read.read(input_file);
     let decrypt_message = answer.Dencrypt(read,shift) 
     let write = Module_write.write(output_file,decrypt_message);
     console.log(decrypt_message)
-    
 }
-
-
+if(action == decode && input_file !=first_file  && output_file ==  second_file) {
+    let text = Module_prompt.prompt()
+    let decrypt_message = answer.Dencrypt( text,shift);
+    let write = Module_write.write(output_file,decrypt_message );
+    
+ }
+ if(action == decode && input_file ==first_file  && output_file !=  second_file) {
+    let read = Module_read.read(input_file);
+    let decrypt_message = answer.Dencrypt(  read,shift);
+    console.log("result decrypt - " + decrypt_message);
+    
+ }
+ if(action == decode && input_file !=first_file  && output_file !=  second_file) {
+    let text = Module_prompt.prompt()
+    let decrypt_message = answer.Dencrypt( text,shift);
+    console.log("result decrypt - " + decrypt_message);
+    
+ }
 
  
